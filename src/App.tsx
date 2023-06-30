@@ -1,11 +1,39 @@
+import { useEffect, useState } from "react";
 import { ExpenseTracker } from "./components/ExpenseTracker/ExpenseTracker";
+import axios, { AxiosError } from "axios";
+
+interface User {
+  id: number;
+  name: string;
+}
 
 function App() {
-  const text =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper";
+  const [users, setUsers] = useState<User[]>([]);
+  const [error, setError] = useState();
+  useEffect(() => {
+    // get -> await promise -> res / err
+    const fetchUsers = async () => {
+      try {
+        const res = await axios.get<User[]>(
+          "https://jsonplaceholder.typicode.com/users"
+        );
+        setUsers(res.data);
+      } catch (err) {
+        setError((err as AxiosError).message);
+      }
+      fetchUsers();
+    };
+
+    /* .then((res) => setUsers(res.data))
+      .catch((err) => setError(err.message)); */
+  }, []);
+
   return (
     <>
-      <ExpenseTracker />
+      {error && <p className="text-danger">{error}</p>}
+      {users.map((user) => (
+        <li key={user.id}>{user.name}</li>
+      ))}
     </>
   );
 }
