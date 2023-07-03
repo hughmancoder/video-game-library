@@ -1,9 +1,9 @@
-import UserList from "./components/userList";
+import { Button } from "@chakra-ui/react";
 
 function App() {
   return (
     <>
-      <UserList />
+      <Button colorScheme="blue">Button</Button>
     </>
   );
 }

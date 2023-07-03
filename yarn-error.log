@@ -23,7 +23,7 @@ Trace:
 
 npm manifest: 
   {
-    "name": "shoe-store",
+    "name": "electronics-store",
     "private": true,
     "version": "0.0.0",
     "type": "module",
