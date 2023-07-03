@@ -1,5 +1,5 @@
-import useUsers from "../hoooks/useUsers";
-import userService, { User } from "../services/user-service";
+import useUsers from "../../hoooks/useUsers";
+import userService, { User } from "../../services/user-service";
 
 function UserList() {
   const { users, setUsers, error, setError, isLoading } = useUsers();
