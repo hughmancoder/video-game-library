@@ -1,4 +1,4 @@
-import { SimpleGrid } from "@chakra-ui/react";
+import { SimpleGrid, Text } from "@chakra-ui/react";
 import useItems from "../hooks/useItems";
 import ItemCard from "./ItemCard";
 
