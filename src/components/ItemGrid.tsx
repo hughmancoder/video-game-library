@@ -1,4 +1,4 @@
-import { SimpleGrid, Text } from "@chakra-ui/react";
+import { SimpleGrid } from "@chakra-ui/react";
 import useItems from "../hooks/useItems";
 import ItemCard from "./ItemCard";
 
@@ -7,7 +7,11 @@ const ItemGrid = () => {
   return (
     <>
       {error && <Text>{error}</Text>}
-      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 5 }} spacing={10}>
+      <SimpleGrid
+        columns={{ sm: 1, md: 2, lg: 3, xl: 5 }}
+        spacing={10}
+        padding="10px"
+      >
         {items?.map((item) => (
           <ItemCard key={item.id} item={item} />
         ))}
