@@ -2,6 +2,7 @@ import { Card, CardBody, HStack, Heading, Image, Text } from "@chakra-ui/react";
 import { Item } from "../hooks/useItems";
 import PlatformIconList from "./PlatformIconList";
 import { CriticScore } from "./CriticScore";
+import getCroppedImageUrl from "../services/image-url";
 
 interface Props {
   item: Item;
@@ -9,8 +10,8 @@ interface Props {
 
 const ItemCard = ({ item }: Props) => {
   return (
-    <Card borderRadius={10} overflow="hidden">
-      <Image src={item.background_image}></Image>
+    <Card borderRadius={10} overflow="hidden" width="300px">
+      <Image src={getCroppedImageUrl(item.background_image)}></Image>
       <CardBody>
         <Heading fontSize="2xl">{item.name}</Heading>
         <HStack justifyContent="space-between">

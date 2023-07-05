@@ -23,23 +23,29 @@ export interface Item {
 const useItems = () => {
     const [items, setItems] = useState<Item[]>([]);
     const [error, setError] = useState("");
+    const [isLoading, setLoading] = useState(false);
   
     useEffect(() => {
-        const controller = new AbortController();
+        const  controller = new AbortController();
+        setLoading(true)
       // /games path needed for api
       apiClient
         .get<FetchItemResponse>("/games", {signal: controller.signal})
         .then((res) => {
-            setItems(res.data.results)})
+            setItems(res.data.results)
+            setLoading(false)
+          }
+            )
         .catch((err) => {
-        if (err instanceof CanceledError) return;
-        setError(err.message)
+          if (err instanceof CanceledError) return;
+          setError(err.message)
+          setLoading(false)
     });
 
 
         return () => controller.abort();
     },[]);
 
-    return {items, error}
+    return {items, error, isLoading}
 }
 export default useItems

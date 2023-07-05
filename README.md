@@ -1,5 +1,5 @@
 ### electronics-store
-- A used bike store web-application built with react 18 using the latest react 2023 best-practices
+- A used electronics store web-application built with react 18 using the latest react 2023 best-practices
 <hr>
 
 ### Tools
