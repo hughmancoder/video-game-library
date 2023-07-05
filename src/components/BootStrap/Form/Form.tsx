@@ -21,7 +21,6 @@ const Form = () => {
 
   const onSubmit = (data: FieldValues) => {
     data.age = parseInt(data.age);
-    console.log(data);
   };
 
   return (

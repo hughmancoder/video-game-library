@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { CanceledError } from "../services/Users/api-client";
-import userService, { User } from "../services/user-service";
+import { CanceledError } from "../services/users/api-client";
+import userService, { User } from "../services/users/user-service";
 
 const useUsers = () => {
   const [users, setUsers] = useState<User[]>([]);

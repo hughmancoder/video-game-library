@@ -1,4 +1,4 @@
-import useUsers from "../../hoooks/useUsers";
+/* import useUsers from "../../hooks/useUsers";
 import userService, { User } from "../../services/user-service";
 
 function UserList() {
@@ -74,3 +74,4 @@ function UserList() {
   );
 }
 export default UserList;
+ */
