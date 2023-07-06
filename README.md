@@ -1,11 +1,12 @@
-### electronics-store
-- A used electronics store web-application built with react 18 using the latest react 2023 best-practices
+### video-game-library
+- A video game library web-application inspired by rawg.io built with react 18 using the latest react 2023 best-practices. 
 <hr>
 
 ### Tools
 - Chackra ui
 - Vite
 - React.ts 18
+- rawg.io api
 <hr>
 
 ### Environment 

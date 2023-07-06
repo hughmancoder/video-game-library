@@ -23,7 +23,7 @@ Trace:
 
 npm manifest: 
   {
-    "name": "electronics-store",
+    "name": "video-game-library",
     "private": true,
     "version": "0.0.0",
     "type": "module",
