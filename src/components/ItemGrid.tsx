@@ -5,14 +5,14 @@ import ItemCardSkeleton from "./ItemCardSkeleton";
 import ItemCardContainer from "./ItemCardContainer";
 
 const ItemGrid = () => {
-  const { items, error, isLoading } = useItems();
+  const { data, error, isLoading } = useItems();
   const skeletons = [1, 2, 3, 4, 5, 6];
   return (
     <>
       {error && <Text>{error}</Text>}
       <SimpleGrid
         columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
-        spacing={10}
+        spacing={3}
         padding="10px"
       >
         {isLoading &&
@@ -21,7 +21,7 @@ const ItemGrid = () => {
               <ItemCardSkeleton key={skeleton} />
             </ItemCardContainer>
           ))}
-        {items?.map((item) => (
+        {data?.map((item) => (
           <ItemCardContainer>
             <ItemCard key={item.id} item={item} />
           </ItemCardContainer>
