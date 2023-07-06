@@ -3,13 +3,13 @@ import useItems from "../hooks/useItems";
 import ItemCard from "./ItemCard";
 import ItemCardSkeleton from "./ItemCardSkeleton";
 import ItemCardContainer from "./ItemCardContainer";
-import { Genre } from "../hooks/useGenres";
+import { GameQuery } from "../App";
 
 interface Props {
-  selectedGenre: Genre | null;
+  gameQuery: GameQuery;
 }
-const ItemGrid = ({ selectedGenre }: Props) => {
-  const { data, error, isLoading } = useItems(selectedGenre);
+const ItemGrid = ({ gameQuery }: Props) => {
+  const { data, error, isLoading } = useItems(gameQuery);
   const skeletons = [1, 2, 3, 4, 5, 6];
   return (
     <>

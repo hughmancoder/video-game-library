@@ -1,4 +1,8 @@
-/* GLOBAL STYLES */
+/* GLOBAL STYLESHEET */
 body {
   padding: 20px;
+}
+
+form {
+  width: 100%;
 }
