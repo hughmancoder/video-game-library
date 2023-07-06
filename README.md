@@ -3,9 +3,9 @@
 <hr>
 
 ### Tools
-- Chackra ui
 - Vite
 - React.ts 18
+- Chackra ui
 - rawg.io api
 <hr>
 

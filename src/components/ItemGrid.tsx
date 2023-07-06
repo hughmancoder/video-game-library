@@ -3,9 +3,13 @@ import useItems from "../hooks/useItems";
 import ItemCard from "./ItemCard";
 import ItemCardSkeleton from "./ItemCardSkeleton";
 import ItemCardContainer from "./ItemCardContainer";
+import { Genre } from "../hooks/useGenres";
 
-const ItemGrid = () => {
-  const { data, error, isLoading } = useItems();
+interface Props {
+  selectedGenre: Genre | null;
+}
+const ItemGrid = ({ selectedGenre }: Props) => {
+  const { data, error, isLoading } = useItems(selectedGenre);
   const skeletons = [1, 2, 3, 4, 5, 6];
   return (
     <>
@@ -17,13 +21,13 @@ const ItemGrid = () => {
       >
         {isLoading &&
           skeletons.map((skeleton) => (
-            <ItemCardContainer>
-              <ItemCardSkeleton key={skeleton} />
+            <ItemCardContainer key={skeleton}>
+              <ItemCardSkeleton />
             </ItemCardContainer>
           ))}
         {data?.map((item) => (
-          <ItemCardContainer>
-            <ItemCard key={item.id} item={item} />
+          <ItemCardContainer key={item.id}>
+            <ItemCard item={item} />
           </ItemCardContainer>
         ))}
       </SimpleGrid>
