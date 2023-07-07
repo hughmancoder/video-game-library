@@ -3,6 +3,7 @@ import { Item } from "../hooks/useItems";
 import PlatformIconList from "./PlatformIconList";
 import { CriticScore } from "./CriticScore";
 import getCroppedImageUrl from "../services/image-url";
+import Emoji from "../hooks/Emoji";
 
 interface Props {
   item: Item;
@@ -19,7 +20,10 @@ const ItemCard = ({ item }: Props) => {
           />
           <CriticScore score={item.metacritic} />
         </HStack>
-        <Heading fontSize="2xl">{item.name}</Heading>
+        <Heading fontSize="2xl">
+          {item.name}
+          <Emoji rating={item.rating_top} />
+        </Heading>
       </CardBody>
     </Card>
   );

@@ -9,9 +9,10 @@ export interface Platform {
 export interface Item {
     id: number;
     name: string;
-    background_image: string;
     parent_platforms: { platform: Platform }[];
+    background_image: string;
     metacritic: number;
+    rating_top: number; // whole number
   }
   
 const useItems = (gameQuery: GameQuery) => useData<Item>("/games", { params: 
