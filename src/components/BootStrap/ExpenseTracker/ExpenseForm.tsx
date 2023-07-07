@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Expense } from "./ExpenseTracker";
+import { FormEvent } from "react";
 
 const CategoryEnum = z.enum(["entertainment", "education", "food", "fees"]);
 const categories = Object.values(CategoryEnum._def.values) as string[];
@@ -29,13 +30,16 @@ const ExpenseForm = ({ addExpense }: Props) => {
     resolver: zodResolver(schema),
   });
 
-  const onSubmit = (expense: Expense) => {
-    addExpense(expense);
+  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    console.log("form submitted with data", data);
+    // addExpense(expense);
     reset();
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(() => onSubmit)}>
       <div className="mb-3">
         <label htmlFor="description" className="form-label">
           Description

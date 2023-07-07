@@ -1,4 +1,7 @@
-/* import { useEffect, useState } from "react";
+export {};
+
+/* 
+import { useEffect, useState } from "react";
 import { CanceledError } from "../services/users/api-client";
 import userService, { User } from "../services/users/user-service";
 
@@ -27,4 +30,5 @@ const useUsers = () => {
   return { users, error, isLoading, setUsers, setError };
 }
 
-export default useUsers; */
+export default useUsers; 
+*/

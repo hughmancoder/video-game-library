@@ -1,4 +1,6 @@
-/* import useUsers from "../../hooks/useUsers";
+export {};
+/* 
+import useUsers from "../../hooks/useUsers";
 import userService, { User } from "../../services/user-service";
 
 function UserList() {
@@ -74,4 +76,4 @@ function UserList() {
   );
 }
 export default UserList;
- */
+*/
