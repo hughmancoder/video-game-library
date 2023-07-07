@@ -13,13 +13,13 @@ const ItemCard = ({ item }: Props) => {
     <Card>
       <Image src={getCroppedImageUrl(item.background_image)}></Image>
       <CardBody>
-        <Heading fontSize="2xl">{item.name}</Heading>
-        <HStack justifyContent="space-between">
+        <HStack justifyContent="space-between" marginBottom={3}>
           <PlatformIconList
             platforms={item.parent_platforms.map((p) => p.platform)}
           />
           <CriticScore score={item.metacritic} />
         </HStack>
+        <Heading fontSize="2xl">{item.name}</Heading>
       </CardBody>
     </Card>
   );
