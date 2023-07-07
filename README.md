@@ -1,10 +1,10 @@
-### video-game-library
+# video-game-library
 
 - A video game library mock web-application inspired by rawg.io built with react 18 using the latest react 2023 best-practices inspired from <https://rawg.io/>
 
 ---
 
-### Tools
+## Tools
 
 - Vite
 - React.ts 18
@@ -13,7 +13,7 @@
 
 ---
 
-### Environment
+## Environment
 
 ***API Key***
 Potential issue:

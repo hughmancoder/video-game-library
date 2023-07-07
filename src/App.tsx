@@ -17,12 +17,22 @@ import { PlatformSelector } from "./components/PlatformSelector";
 import { SortSelector } from "./components/SortSelector";
 import GameHeading from "./components/GameHeading";
 import { RiInformationFill as InfoIcon } from "react-icons/ri";
+import { Platform } from "./hooks/useItems";
+import { Genre } from "./hooks/useGenres";
+onabort;
 
 const ABOUT =
   "A video game library mock web-application inspired by rawg.io built with react 18 using the latest react 2023 best-practices inspired from <https://rawg.io/>";
 
+export interface GameQuery {
+  genre: Genre | null;
+  platform: Platform | null;
+  sortOrder: string;
+  searchText: string;
+}
+
 function App() {
-  const [gameQuery, setGameQuery] = useState({
+  const [gameQuery, setGameQuery] = useState<GameQuery>({
     genre: null,
     platform: null,
     sortOrder: "",
@@ -46,9 +56,9 @@ function App() {
         >
           <GridItem area="nav">
             <NavBar
-              onSearch={(search) =>
-                setGameQuery({ ...gameQuery, searchText: search })
-              }
+              onSearch={(search) => {
+                setGameQuery({ ...gameQuery, searchText: search });
+              }}
             />
           </GridItem>
           <Show above="lg">
