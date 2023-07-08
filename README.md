@@ -2,6 +2,8 @@
 
 - A video game library mock web-application inspired by rawg.io built with react 18 using the latest react 2023 best-practices inspired from <https://rawg.io/>
 
+[See my project live here](https://video-game-library-demo.vercel.app/)
+
 ---
 
 ## Tools
